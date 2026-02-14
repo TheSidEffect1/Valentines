@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Lavender Love Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="floating-hearts" aria-hidden="true">
+      <span>💜</span><span>💗</span><span>💞</span><span>💜</span><span>💗</span>
+    </div>
+
+    <main class="app">
+      <section id="quiz-section" class="panel active" aria-live="polite">
+        <h1>Mini Love Quest</h1>
+        <p class="subtitle">Answer these and unlock our story timeline ✨</p>
+
+        <article class="question-card">
+          <h2 id="question-title">Question</h2>
+          <div id="options" class="options" role="list"></div>
+          <p id="feedback" class="feedback"></p>
+          <button id="next-btn" class="btn hidden" type="button">Next Question ➜</button>
+        </article>
+      </section>
+
+      <section id="timeline-section" class="panel" aria-hidden="true">
+        <h2 class="timeline-title">Our Story Timeline 💌</h2>
+        <p class="subtitle">A tiny memory lane made with love.</p>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <article class="timeline-card reveal-left" id="timeline-card-1">
+            <h3>The day we fell in love</h3>
+            <p class="timeline-main">When you tried to kill me with your books.</p>
+            <p class="timeline-date">Mid December 2022</p>
+          </article>
+
+          <article class="timeline-card reveal-right placeholder" id="timeline-card-2">
+            <h3>Next chapter</h3>
+            <p class="timeline-main">To be continued...</p>
+            <p class="timeline-date">(Let’s fill this together)</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
