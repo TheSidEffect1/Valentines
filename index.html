@@ -12,21 +12,62 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="quiz-mode">
     <div class="floating-hearts" aria-hidden="true">
       <span>💜</span><span>💗</span><span>💞</span><span>💜</span><span>💗</span>
     </div>
 
     <main class="app">
-      <section id="quiz-section" class="panel active" aria-live="polite">
+      <section id="landing-section" class="panel active" aria-live="polite">
+        <article class="question-card landing-card">
+          <h1>Welcome, Miss Almost-Best ✨</h1>
+          <p class="landing-text">
+            Are you ready to take a quiz made by the best person in the entire world,
+            for the second best person in the entire world?
+          </p>
+          <p class="landing-subtext">
+            There might be uncomfortable questions. I suggest you click NO.
+          </p>
+
+          <div class="landing-actions" id="landing-actions">
+            <button id="landing-yes" class="btn landing-btn hover-locked" type="button">Yes</button>
+            <button id="landing-no" class="btn landing-btn no-btn floating-btn" type="button">No</button>
+          </div>
+
+          <p id="landing-reveal" class="landing-reveal"></p>
+        </article>
+      </section>
+
+      <section id="phase-section" class="panel" aria-live="polite">
+        <article class="phase-card" id="phase-card">
+          <p class="phase-kicker">Phase 1</p>
+          <h2>The Beginning.</h2>
+        </article>
+      </section>
+
+      <section id="phase-two-section" class="panel" aria-live="polite">
+        <article class="phase-card" id="phase-two-card">
+          <p class="phase-kicker">Phase 2</p>
+          <h2>The Talking Phase.</h2>
+        </article>
+      </section>
+
+      <section id="quiz-section" class="panel" aria-live="polite">
         <h1>Mini Love Quest</h1>
         <p class="subtitle">Answer these and unlock our story timeline ✨</p>
 
         <article class="question-card">
           <h2 id="question-title">Question</h2>
           <div id="options" class="options" role="list"></div>
+          <div id="text-answer-wrap" class="text-answer-wrap hidden">
+            <input id="text-answer" type="text" placeholder="Type your answer here..." />
+          </div>
           <p id="feedback" class="feedback"></p>
-          <button id="next-btn" class="btn hidden" type="button">Next Question ➜</button>
+          <div class="quiz-actions">
+            <button id="lock-btn" class="btn" type="button">Lock the answer 🔒</button>
+            <button id="retry-btn" class="btn hidden" type="button">Try again 🔁</button>
+            <button id="next-btn" class="btn hidden" type="button">Next ➜</button>
+          </div>
         </article>
       </section>
 
@@ -37,20 +78,107 @@
         <div class="timeline-wrapper">
           <div class="timeline-line"></div>
 
-          <article class="timeline-card reveal-left" id="timeline-card-1">
+          <article class="timeline-card right" id="timeline-memory">
             <h3>The day we fell in love</h3>
-            <p class="timeline-main">When you tried to kill me with your books.</p>
-            <p class="timeline-date">Mid December 2022</p>
+            <p class="timeline-main" id="timeline-memory-answer"></p>
           </article>
 
-          <article class="timeline-card reveal-right placeholder" id="timeline-card-2">
-            <h3>Next chapter</h3>
-            <p class="timeline-main">To be continued...</p>
-            <p class="timeline-date">(Let’s fill this together)</p>
+          <article class="timeline-card left hidden" id="timeline-q3">
+            <h3>When did I pity you and finally decide to propose you?</h3>
+            <p class="timeline-main" id="timeline-q3-answer"></p>
           </article>
+
+          <article class="timeline-card right hidden" id="timeline-q5">
+            <h3>When did you become so comfortable that you behaving like a child in front of me?</h3>
+            <p class="timeline-main" id="timeline-q5-answer"></p>
+          </article>
+
+          <article class="timeline-card left hidden" id="timeline-q8">
+            <h3>When did I teach you that kinky stuff on call? 😋 😋</h3>
+            <p class="timeline-main" id="timeline-q8-answer"></p>
+          </article>
+
+          <article class="timeline-card right hidden" id="timeline-q9">
+            <h3>When was the first time we met?</h3>
+            <p class="timeline-main" id="timeline-q9-answer"></p>
+          </article>
+
+        </div>
+
+        <div id="surprise-wrap" class="surprise-wrap hidden" aria-live="polite">
+          <button id="surprise-btn" class="btn surprise-btn" type="button">Ready for the question of the year?</button>
+        </div>
+
+      </section>
+
+      <section id="spicy-section" class="panel" aria-live="polite">
+        <div class="spicy-floating-wrap">
+          <p id="spicy-umm" class="spicy-umm hidden">Ummm.</p>
+          <h2 id="spicy-ready" class="spicy-ready hidden">Ready for some spicy questions now?</h2>
         </div>
       </section>
+
+      <article class="portfolio-card hidden" id="portfolio-card">
+        <h3>The Lover Boy</h3>
+        <div class="name-overlay" id="lover-name-overlay"></div>
+        <p class="timeline-main" id="timeline-lover-text"></p>
+        <p class="timeline-main playful-line magenta" id="timeline-lover-extra"></p>
+        <p class="timeline-main playful-line silver" id="timeline-lover-color"></p>
+        <p class="timeline-main playful-line plum" id="timeline-lover-love"></p>
+      </article>
+
+      <article class="portfolio-card lucky-girl-card hidden" id="lucky-card">
+        <h3>The lucky girl</h3>
+        <div class="name-overlay" id="lucky-name-overlay"></div>
+        <p class="timeline-main" id="timeline-lucky-text"></p>
+        <p class="timeline-main playful-line cyan" id="timeline-lucky-extra"></p>
+        <p class="timeline-main playful-line violet" id="timeline-lucky-color"></p>
+        <p class="timeline-main playful-line coral" id="timeline-lucky-love"></p>
+      </article>
+
+      <div id="finale-heart" class="finale-heart hidden" aria-hidden="true">❤</div>
+
+
+      <section id="final-question-modal" class="final-question-modal hidden" aria-live="polite">
+        <div class="final-question-window">
+          <p class="final-question-kicker">FINAL QUESTION</p>
+          <h2>Answer all three. The answers read vertically.</h2>
+
+          <div class="fq-row">
+            <p>Q1 - If the letter Z didn't exist, what would the alphabet end with?</p>
+            <input id="fq1-input" type="text" placeholder="" aria-label="Final question 1" />
+          </div>
+
+          <div class="fq-row">
+            <p>Q2 - How many words are there in “I love you”?</p>
+            <input id="fq2-input" type="text" placeholder="" aria-label="Final question 2" />
+          </div>
+
+          <div class="fq-row">
+            <p>Q3 - If there was no U, what would happen to us?</p>
+            <input id="fq3-input" type="text" placeholder="" aria-label="Final question 3" />
+          </div>
+
+          <p id="fq-feedback" class="fq-feedback"></p>
+          <button id="final-reveal-btn" class="btn final-reveal-btn" type="button">Reveal 👀</button>
+
+          <div id="yes-overlay" class="yes-overlay hidden" aria-hidden="true">
+            <div class="yes-word">
+              <span class="yes-char y">Y</span><span id="yes-mid-char" class="yes-char mid">3</span><span class="yes-char s">S</span>
+            </div>
+            <div id="modal-hearts" class="modal-hearts" aria-hidden="true"></div>
+            <div id="proposal-copy" class="proposal-copy">
+              <h3>Will you be my Valentine?</h3>
+              <p>You answered: <strong>YES.</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </main>
+<audio id="bg-music" preload="auto">
+  <source src="Stephen Dawes - Teenage Dream (Lyrics).mp3" type="audio/mpeg">
+</audio>
 
     <script src="script.js"></script>
   </body>
