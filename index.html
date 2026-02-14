@@ -12,7 +12,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="quiz-mode">
     <div class="floating-hearts" aria-hidden="true">
       <span>💜</span><span>💗</span><span>💞</span><span>💜</span><span>💗</span>
     </div>
@@ -26,7 +26,7 @@
           <h2 id="question-title">Question</h2>
           <div id="options" class="options" role="list"></div>
           <p id="feedback" class="feedback"></p>
-          <button id="next-btn" class="btn hidden" type="button">Next Question ➜</button>
+          <button id="next-btn" class="btn hidden" type="button">Next ➜</button>
         </article>
       </section>
 
@@ -37,16 +37,22 @@
         <div class="timeline-wrapper">
           <div class="timeline-line"></div>
 
-          <article class="timeline-card reveal-left" id="timeline-card-1">
-            <h3>The day we fell in love</h3>
-            <p class="timeline-main">When you tried to kill me with your books.</p>
-            <p class="timeline-date">Mid December 2022</p>
+          <article class="timeline-card right" id="timeline-q1">
+            <p class="timeline-tag">Q1</p>
+            <h3>When did I fall in love with you?</h3>
+            <p class="timeline-main" id="timeline-q1-answer"></p>
           </article>
 
-          <article class="timeline-card reveal-right placeholder" id="timeline-card-2">
-            <h3>Next chapter</h3>
-            <p class="timeline-main">To be continued...</p>
-            <p class="timeline-date">(Let’s fill this together)</p>
+          <article class="timeline-card right" id="timeline-q2">
+            <p class="timeline-tag">Q2</p>
+            <h3>What was the date?</h3>
+            <p class="timeline-main" id="timeline-q2-answer"></p>
+          </article>
+
+          <article class="timeline-card left hidden" id="timeline-q3">
+            <p class="timeline-tag">Q3</p>
+            <h3>When did I pity you and finally decide to propose you?</h3>
+            <p class="timeline-main" id="timeline-q3-answer"></p>
           </article>
         </div>
       </section>
