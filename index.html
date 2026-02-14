@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Lavender Love Story</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Sacramento&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="quiz-mode">
+    <div class="floating-hearts" aria-hidden="true">
+      <span>💜</span><span>💗</span><span>💞</span><span>💜</span><span>💗</span>
+    </div>
+
+    <main class="app">
+      <section id="quiz-section" class="panel active" aria-live="polite">
+        <h1>Mini Love Quest</h1>
+        <p class="subtitle">Answer these and unlock our story timeline ✨</p>
+
+        <article class="question-card">
+          <h2 id="question-title">Question</h2>
+          <div id="options" class="options" role="list"></div>
+          <p id="feedback" class="feedback"></p>
+          <button id="next-btn" class="btn hidden" type="button">Next ➜</button>
+        </article>
+      </section>
+
+      <section id="timeline-section" class="panel" aria-hidden="true">
+        <h2 class="timeline-title">Our Story Timeline 💌</h2>
+        <p class="subtitle">A tiny memory lane made with love.</p>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <article class="timeline-card right" id="timeline-q1">
+            <p class="timeline-tag">Q1</p>
+            <h3>When did I fall in love with you?</h3>
+            <p class="timeline-main" id="timeline-q1-answer"></p>
+          </article>
+
+          <article class="timeline-card right" id="timeline-q2">
+            <p class="timeline-tag">Q2</p>
+            <h3>What was the date?</h3>
+            <p class="timeline-main" id="timeline-q2-answer"></p>
+          </article>
+
+          <article class="timeline-card left hidden" id="timeline-q3">
+            <p class="timeline-tag">Q3</p>
+            <h3>When did I pity you and finally decide to propose you?</h3>
+            <p class="timeline-main" id="timeline-q3-answer"></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
